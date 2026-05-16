@@ -9,7 +9,7 @@ router.post(
   '/register',
   [
     body('email').isEmail().normalizeEmail(),
-    body('password').isLength({ min: 6 }),
+    body('password').isString().isLength({ min: 6 }),
   ],
   register,
 );
